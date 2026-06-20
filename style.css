@@ -165,13 +165,14 @@ img, video {
 
 /* Glowing Ambient Orbs */
 .orb {
-    position: absolute;
+    position: fixed; /* or absolute, but must be taken out of normal flow */
+    pointer-events: none;
+    z-index: -1;
     border-radius: 50%;
     filter: blur(140px);
-    z-index: 0;
-    pointer-events: none;
     opacity: 0.15;
 }
+
 
 .orb-gold {
     background: var(--color-accent-gold);
@@ -478,6 +479,17 @@ img, video {
     border: 3px solid rgba(255, 255, 255, 0.05);
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
     transition: var(--transition-smooth);
+}
+
+.hero-logo-img {
+    height: 130px;
+    width: 130px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+    transition: var(--transition-smooth);
+    background: rgba(255, 255, 255, 0.08); /* helps logo stand out on dark hero */
 }
 
 .hero-logo-img.logo-hoe {
